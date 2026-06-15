@@ -92,25 +92,6 @@ On every push to `main`, the workflow:
 2. Builds the app with `npm run build`.
 3. Deploys the generated `dist` folder to the `cpanel-deploy` branch.
 
-## Git Hygiene
-
-Generated and local-only files are ignored through `.gitignore`, including:
-
-- `node_modules/`
-- `dist/`
-- `.env` files
-- coverage output
-- Vite cache
-
-Do not commit `node_modules` or build output. Install dependencies locally with `npm install` and let CI generate the production build.
-
-## Available Scripts
-
-```bash
-npm run dev
-npm run build
-npm run preview
-```
 
 ## Contact
 
