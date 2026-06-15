@@ -42,7 +42,6 @@ html {
   scroll-behavior: smooth;
   scrollbar-color: #6ee7b7 #03100b;
   scrollbar-width: thin;
-  cursor: none;
 }
 
 body {
@@ -95,7 +94,6 @@ h6 {
 button,
 a {
   -webkit-tap-highlight-color: transparent;
-  cursor: none;
 }
 
 a {
