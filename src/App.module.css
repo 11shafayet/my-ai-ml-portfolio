@@ -1498,11 +1498,12 @@
 }
 
 .loaderTitle {
+  width: min(100% - 32px, 1100px);
   margin: 0;
   color: var(--text);
-  font-size: clamp(2.4rem, 7vw, 5.2rem);
+  font-size: clamp(1.55rem, 7vw, 5.2rem);
   font-weight: 800;
-  letter-spacing: 0.18em;
+  letter-spacing: clamp(0.04em, 0.6vw, 0.18em);
   line-height: 1.05;
   text-align: center;
   text-transform: uppercase;
@@ -1757,6 +1758,9 @@
   .nav button {
     width: 100%;
   }
+  .brand img {
+    padding-left: 0px;
+  }
 
   .section {
     width: min(100% - 24px, 1160px);
@@ -1850,5 +1854,14 @@
   .primaryButton,
   .secondaryButton {
     width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .loaderTitle {
+    width: min(100% - 24px, 360px);
+    font-size: clamp(1.42rem, 7.2vw, 1.9rem);
+    letter-spacing: 0.04em;
+    line-height: 1.15;
   }
 }
