@@ -1,7 +1,19 @@
+import { Github } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { staggerContainer } from '../../constants/animations';
 import GlassCard from '../common/GlassCard';
 import styles from '../../App.module.css';
+
+const projectColors = [
+  'projectBlue',
+  'projectRose',
+  'projectAmber',
+  'projectViolet',
+  'projectCyan',
+  'projectLime',
+  'projectOrange',
+  'projectSlate',
+];
 
 function ProjectGrid({ items }) {
   return (
@@ -13,7 +25,7 @@ function ProjectGrid({ items }) {
       viewport={{ once: false, margin: '-80px' }}
     >
       {items.map((project, index) => (
-        <GlassCard key={project.title} color={project.color} delay={index * 0.08}>
+        <GlassCard key={project.title} color={projectColors[index % projectColors.length]} delay={index * 0.08}>
           <div className={styles.projectTopline}>
             <span>{project.metric}</span>
           </div>
@@ -24,6 +36,10 @@ function ProjectGrid({ items }) {
               <span key={item}>{item}</span>
             ))}
           </div>
+          <a className={styles.projectGithubButton} href={project.githubLink} target="_blank" rel="noreferrer">
+            <Github size={17} />
+            View on GitHub
+          </a>
         </GlassCard>
       ))}
     </motion.div>

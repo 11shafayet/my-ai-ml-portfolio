@@ -66,12 +66,22 @@ export const experiences = [
 
 export const projects = [
   {
+    title: 'PDF RAG Chatbot',
+    summary:
+      'Built an AI-powered chatbot that answers questions over uploaded PDFs using a hybrid retrieval pipeline (vector search + BM25 fusion + reranking), with page-level citations and confidence-scored, source-grounded answers.',
+    stack: ['Python', 'FAISS', 'Sentence-Transformers', 'Groq', 'Streamlit'],
+    metric: 'Hybrid search + reranking',
+    color: 'purple',
+    githubLink: 'https://github.com/11shafayet/pdf-rag-chatbot'
+  },
+  {
     title: 'Product Image Classifier',
     summary:
-      'Built a deep learning image classifier trained on 44,288 fashion product images across 4 categories.',
+      'Built a deep learning image classifier trained on 44,288 fashion product images across 4 categories, progressing from a custom CNN to a fine-tuned ResNet18 transfer learning model.',
     stack: ['PyTorch', 'ResNet18', 'Transfer Learning'],
     metric: '99.3% validation accuracy',
     color: 'blue',
+    githubLink: 'https://github.com/11shafayet/product-image-classifier'
   },
   {
     title: 'Twitter Airline Sentiment Analysis',
@@ -80,13 +90,24 @@ export const projects = [
     stack: ['PyTorch', 'NLP', 'LSTM', 'GRU'],
     metric: 'Baseline > recurrent models',
     color: 'red',
+    githubLink: 'https://github.com/11shafayet/twitter-airline-sentiment-analysis'
   },
   {
     title: 'E-commerce Customer Churn Predictor',
     summary:
-      'Developed a churn prediction system on 6,000 customers using Logistic Regression, Random Forest, and XGBoost.',
+      'Developed a churn prediction system on 6,000 customers using Logistic Regression, Random Forest, and XGBoost, optimizing for recall to maximize churn detection for retention strategy.',
     stack: ['Python', 'Scikit-learn', 'XGBoost'],
     metric: '97% churn recall',
     color: 'yellow',
+    githubLink: 'https://github.com/11shafayet/e-commerce_churn_predictor'
+  },
+  {
+    title: 'House Price Prediction',
+    summary:
+      'Built a regression pipeline for the Kaggle "House Prices: Advanced Regression Techniques" competition, with feature engineering, log-transformed targets, and a blended XGBoost + Lasso ensemble.',
+    stack: ['Python', 'Scikit-learn', 'XGBoost', 'Lasso'],
+    metric: '0.1183 RMSE (Kaggle score 0.12566)',
+    color: 'green',
+    githubLink: 'https://github.com/11shafayet/house_price_prediction'
   },
 ];

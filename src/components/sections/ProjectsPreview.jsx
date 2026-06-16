@@ -12,7 +12,7 @@ function ProjectsPreview({ onNavigate }) {
         <span className={styles.sectionLabel}>Projects</span>
         <h2>Selected applied AI work.</h2>
       </motion.div>
-      <ProjectGrid items={projects} />
+      <ProjectGrid items={projects.slice(0, 3)} />
       <motion.div className={styles.centerAction} {...fadeUp(0.12)}>
         <motion.button
           className={`${styles.primaryButton} ${styles.specialCtaButton}`}
