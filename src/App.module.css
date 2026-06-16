@@ -1786,7 +1786,7 @@
   }
 
   .heroSignalBar {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 24px 1fr 24px 1fr;
     width: min(360px, 100%);
     border-radius: 24px;
   }
