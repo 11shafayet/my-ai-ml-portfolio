@@ -96,11 +96,12 @@ function App() {
   }, [page]);
 
   const goToPage = (nextPage) => {
-    if (nextPage === 'Experiences') {
+    if (nextPage === 'About' || nextPage === 'Skills') {
+      const sectionId = nextPage.toLowerCase();
       setPage('Home');
       setMenuOpen(false);
       window.setTimeout(() => {
-        document.getElementById('experiences')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 80);
       return;
     }
@@ -120,6 +121,7 @@ function App() {
         theme={theme}
         menuOpen={menuOpen}
         onNavigate={goToPage}
+        onCloseMenu={() => setMenuOpen(false)}
         onToggleMenu={() => setMenuOpen((value) => !value)}
         onToggleTheme={() => setTheme((value) => (value === 'dark' ? 'light' : 'dark'))}
       />

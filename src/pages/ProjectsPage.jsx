@@ -13,7 +13,7 @@ function ProjectsPage() {
           A compact project archive covering computer vision, NLP, and future production-grade AI systems.
         </p>
       </section>
-      <section className={styles.section}>
+      <section className={`${styles.section} ${styles.projectsArchive}`}>
         <ProjectGrid items={projects} />
       </section>
     </PageMotion>

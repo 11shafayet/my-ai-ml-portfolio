@@ -129,6 +129,10 @@
   backdrop-filter: blur(16px);
 }
 
+.navLinks {
+  display: contents;
+}
+
 .nav button {
   color: var(--soft);
   background: transparent;
@@ -148,6 +152,11 @@
 .nav button.activeNav {
   color: #052016;
   background: var(--base);
+}
+
+.drawerOverlay,
+.drawerSocial {
+  display: none;
 }
 
 .headerActions {
@@ -1413,6 +1422,10 @@
   max-width: 720px;
 }
 
+.projectsArchive {
+  padding-top: 42px;
+}
+
 .contactLinks {
   display: grid;
   gap: 12px;
@@ -1740,23 +1753,93 @@
     display: inline-grid;
   }
 
+  .brand,
+  .headerActions {
+    position: relative;
+    z-index: 3;
+  }
+
+  .drawerOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    display: block;
+    border: 0;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(2px);
+    transition: opacity 220ms ease;
+  }
+
+  .drawerOverlayOpen {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   .nav {
     position: fixed;
-    top: 72px;
-    right: 12px;
-    left: 12px;
-    display: none;
+    top: 0;
+    right: -100%;
+    left: auto;
+    width: min(82vw, 340px);
+    height: 100vh;
+    display: flex;
     flex-direction: column;
     align-items: stretch;
-    border-radius: 20px;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 96px 22px 32px;
+    border-width: 0 0 0 1px;
+    border-radius: 28px 0 0 28px;
+    background:
+      radial-gradient(circle at 20% 10%, rgba(110, 231, 183, 0.22), transparent 34%),
+      radial-gradient(circle at 88% 28%, rgba(56, 189, 248, 0.18), transparent 32%),
+      var(--panel);
+    box-shadow: -28px 0 70px rgba(0, 0, 0, 0.34);
+    backdrop-filter: blur(26px);
+    opacity: 0;
+    transform: translateX(18px);
+    transition: right 260ms ease, opacity 220ms ease, transform 260ms ease;
+    z-index: 2;
   }
 
   .navOpen {
+    right: 0;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .navLinks {
     display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .nav button {
     width: 100%;
+    min-height: 52px;
+    border: 1px solid rgba(110, 231, 183, 0.14);
+    background: rgba(255, 255, 255, 0.04);
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .nav button:hover {
+    background: rgba(110, 231, 183, 0.1);
+  }
+
+  .drawerSocial {
+    display: flex;
+    margin-top: auto;
+    padding-top: 28px;
+  }
+
+  .drawerSocial .socialLinks {
+    margin-top: 0;
   }
   .brand img {
     padding-left: 0px;
@@ -1765,6 +1848,10 @@
   .section {
     width: min(100% - 24px, 1160px);
     padding: 62px 0;
+  }
+
+  .projectsArchive {
+    padding-top: 18px;
   }
 
   .heroContent h1 {

@@ -1,8 +1,9 @@
 import { Menu, Moon, Sun, X } from 'lucide-react';
 import { navItems } from '../../constants/navigation';
+import SocialLinks from '../common/SocialLinks';
 import styles from '../../App.module.css';
 
-function Header({ page, theme, menuOpen, onNavigate, onToggleMenu, onToggleTheme }) {
+function Header({ page, theme, menuOpen, onNavigate, onCloseMenu, onToggleMenu, onToggleTheme }) {
   return (
     <header className={styles.header}>
       <button className={styles.brand} onClick={() => onNavigate('Home')} aria-label="Go to home">
@@ -13,16 +14,28 @@ function Header({ page, theme, menuOpen, onNavigate, onToggleMenu, onToggleTheme
         />
       </button>
 
+      <button
+        className={`${styles.drawerOverlay} ${menuOpen ? styles.drawerOverlayOpen : ''}`}
+        onClick={onCloseMenu}
+        aria-label="Close navigation"
+        tabIndex={menuOpen ? 0 : -1}
+      />
+
       <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ''}`} aria-label="Main navigation">
-        {navItems.map((item) => (
-          <button
-            key={item}
-            className={page === item ? styles.activeNav : ''}
-            onClick={() => onNavigate(item)}
-          >
-            {item}
-          </button>
-        ))}
+        <div className={styles.navLinks}>
+          {navItems.map((item) => (
+            <button
+              key={item}
+              className={page === item ? styles.activeNav : ''}
+              onClick={() => onNavigate(item)}
+            >
+              {item}
+            </button>
+          ))}
+        </div>
+        <div className={styles.drawerSocial}>
+          <SocialLinks />
+        </div>
       </nav>
 
       <div className={styles.headerActions}>
