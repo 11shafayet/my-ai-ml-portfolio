@@ -75,13 +75,13 @@ export const projects = [
     githubLink: 'https://github.com/11shafayet/pdf-rag-chatbot'
   },
   {
-    title: 'Product Image Classifier',
+    title: 'Visual Defect Detector',
     summary:
-      'Built a deep learning image classifier trained on 44,288 fashion product images across 4 categories, progressing from a custom CNN to a fine-tuned ResNet18 transfer learning model.',
-    stack: ['PyTorch', 'ResNet18', 'Transfer Learning'],
-    metric: '99.3% validation accuracy',
+      'Built a full-stack AI application that detects product defects and classifies product category across 6 MVTec AD categories, with Grad-CAM visual explanations for every prediction.',
+    stack: ['PyTorch', 'EfficientNet-B0', 'FastAPI', 'React', 'SQLite'],
+    metric: '93.52% defect accuracy',
     color: 'blue',
-    githubLink: 'https://github.com/11shafayet/product-image-classifier'
+    githubLink: 'https://github.com/11shafayet/visual-defect-detector'
   },
   {
     title: 'Twitter Airline Sentiment Analysis',

@@ -6,10 +6,24 @@ import PageLoader from './components/layout/PageLoader';
 import ProgressBar from './components/layout/ProgressBar';
 import ContactPage from './pages/ContactPage';
 import HomePage from './pages/HomePage';
+import MonitorPage from './pages/MonitorPage';
 import ProjectsPage from './pages/ProjectsPage';
 import { personal } from './data/portfolio';
+import { trackPageVisit } from './utils/monitoring';
 import { getInitialTheme } from './utils/theme';
 import styles from './App.module.css';
+
+const pagePaths = {
+  Home: '/',
+  Projects: '/projects',
+  Contact: '/contact',
+  Monitor: '/monitor',
+};
+
+const getPageFromPath = (pathname) => {
+  const match = Object.entries(pagePaths).find(([, path]) => path === pathname);
+  return match ? match[0] : 'Home';
+};
 
 const pageMeta = {
   Home: {
@@ -27,6 +41,10 @@ const pageMeta = {
     description:
       'Contact MD Shafayetur Rahman for AI/ML engineering, applied AI prototypes, machine learning projects, and full stack AI product collaboration.',
   },
+  Monitor: {
+    title: `${personal.name} | Monitor`,
+    description: 'Public visitor activity monitor for the portfolio.',
+  },
 };
 
 const setMetaContent = (selector, content) => {
@@ -41,7 +59,7 @@ const setLinkHref = (selector, href) => {
 
 function App() {
   const [theme, setTheme] = useState(getInitialTheme);
-  const [page, setPage] = useState('Home');
+  const [page, setPage] = useState(() => getPageFromPath(window.location.pathname));
   const [menuOpen, setMenuOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -95,11 +113,24 @@ function App() {
     };
   }, [page]);
 
+  useEffect(() => trackPageVisit(page), [page]);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      setPage(getPageFromPath(window.location.pathname));
+      setMenuOpen(false);
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
   const goToPage = (nextPage) => {
     if (nextPage === 'About' || nextPage === 'Skills') {
       const sectionId = nextPage.toLowerCase();
       setPage('Home');
       setMenuOpen(false);
+      window.history.pushState(null, '', `/#${sectionId}`);
       window.setTimeout(() => {
         document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 80);
@@ -108,6 +139,7 @@ function App() {
 
     setPage(nextPage);
     setMenuOpen(false);
+    window.history.pushState(null, '', pagePaths[nextPage] || '/');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -130,6 +162,7 @@ function App() {
           {page === 'Home' && <HomePage key="home" onNavigate={goToPage} />}
           {page === 'Projects' && <ProjectsPage key="projects" />}
           {page === 'Contact' && <ContactPage key="contact" />}
+          {page === 'Monitor' && <MonitorPage key="monitor" />}
         </AnimatePresence>
       </main>
     </div>

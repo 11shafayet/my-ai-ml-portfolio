@@ -1426,6 +1426,123 @@
   padding-top: 42px;
 }
 
+.monitorSection {
+  padding-top: 36px;
+}
+
+.monitorGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.monitorMetric,
+.monitorPanel {
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025)),
+    var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(24px);
+}
+
+.monitorMetric {
+  min-height: 132px;
+  padding: 22px;
+  border-radius: 18px;
+}
+
+.monitorMetric span,
+.monitorPanelHeader span,
+.monitorTable td span,
+.monitorEmpty {
+  color: var(--soft);
+}
+
+.monitorMetric strong {
+  display: block;
+  margin-top: 14px;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 0.95;
+}
+
+.monitorPanel {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.monitorPanelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.monitorPanelHeader h2 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.monitorTableWrap {
+  overflow-x: auto;
+}
+
+.monitorTable {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: collapse;
+}
+
+.monitorTable th,
+.monitorTable td {
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(110, 231, 183, 0.12);
+  text-align: left;
+  vertical-align: top;
+}
+
+.monitorTable th {
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.monitorTable td {
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.monitorTable td strong,
+.monitorTable td span {
+  display: block;
+}
+
+.monitorTable td span {
+  margin-top: 4px;
+  font-size: 0.78rem;
+}
+
+.monitorBadge {
+  display: inline-flex !important;
+  margin-top: 0 !important;
+  padding: 7px 10px;
+  border-radius: 999px;
+  color: #041b12 !important;
+  background: var(--base);
+  font-weight: 800;
+}
+
+.monitorEmpty {
+  margin: 0;
+  padding: 24px;
+}
+
 .contactLinks {
   display: grid;
   gap: 12px;
@@ -1852,6 +1969,25 @@
 
   .projectsArchive {
     padding-top: 18px;
+  }
+
+  .monitorSection {
+    padding-top: 18px;
+  }
+
+  .monitorGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .monitorMetric {
+    min-height: 118px;
+    padding: 18px;
+  }
+
+  .monitorPanelHeader {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 18px;
   }
 
   .heroContent h1 {
