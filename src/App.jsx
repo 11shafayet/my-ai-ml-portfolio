@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import { ArrowUp } from 'lucide-react';
 import Header from './components/layout/Header';
 import NeuralBackdrop from './components/layout/NeuralBackdrop';
 import PageLoader from './components/layout/PageLoader';
@@ -165,6 +166,16 @@ function App() {
           {page === 'Monitor' && <MonitorPage key="monitor" />}
         </AnimatePresence>
       </main>
+      <footer className={styles.footer}>
+        <p>Copyright 2026 MD Shafayetur Rahman. All rights reserved.</p>
+      </footer>
+      <button
+        className={`${styles.backToTop} ${scrollProgress > 8 ? styles.backToTopVisible : ''}`}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        aria-label="Back to top"
+      >
+        <ArrowUp size={20} />
+      </button>
     </div>
   );
 }

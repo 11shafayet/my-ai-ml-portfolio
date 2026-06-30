@@ -27,7 +27,7 @@ export const skills = [
     color: 'yellow',
     highlight: '2+ years MERN',
     summary: 'Frontend and backend experience building scalable, responsive MERN applications.',
-    items: ['React.js', 'Next.js', 'Node.js', 'Express.js', 'MongoDB', 'Redux'],
+    items: ['React.js', 'Next.js', 'Node.js', 'Express.js', 'FastAPI', 'MongoDB', 'SQL', 'Redux'],
   },
   {
     title: 'Practices',
