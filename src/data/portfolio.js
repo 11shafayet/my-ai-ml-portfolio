@@ -84,6 +84,15 @@ export const projects = [
     githubLink: 'https://github.com/11shafayet/visual-defect-detector'
   },
   {
+    title: 'Product Image Classifier',
+    summary:
+      'Built an image classification application that identifies product categories from uploaded product images.',
+    stack: ['Python', 'Computer Vision', 'Image Classification'],
+    metric: 'Product category prediction',
+    color: 'cyan',
+    githubLink: 'https://github.com/11shafayet/product-image-classifier'
+  },
+  {
     title: 'Twitter Airline Sentiment Analysis',
     summary:
       'Built a multi-class sentiment classifier on real-world airline tweets using multiple NLP baselines and recurrent models.',
