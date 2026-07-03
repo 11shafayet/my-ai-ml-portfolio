@@ -93,6 +93,15 @@ export const projects = [
     githubLink: 'https://github.com/11shafayet/product-image-classifier'
   },
   {
+    title: 'Language Translation Tool',
+    summary:
+      'Built a language translation application that translates text between languages through a simple, practical user workflow.',
+    stack: ['Python', 'Translation', 'NLP'],
+    metric: 'Multilingual text translation',
+    color: 'cyan',
+    githubLink: 'https://github.com/11shafayet/Language_Translation_Tool'
+  },
+  {
     title: 'Twitter Airline Sentiment Analysis',
     summary:
       'Built a multi-class sentiment classifier on real-world airline tweets using multiple NLP baselines and recurrent models.',
@@ -118,14 +127,5 @@ export const projects = [
     metric: '0.1183 RMSE (Kaggle score 0.12566)',
     color: 'green',
     githubLink: 'https://github.com/11shafayet/house_price_prediction'
-  },
-  {
-    title: 'Language Translation Tool',
-    summary:
-      'Built a language translation application that translates text between languages through a simple, practical user workflow.',
-    stack: ['Python', 'Translation', 'NLP'],
-    metric: 'Multilingual text translation',
-    color: 'cyan',
-    githubLink: 'https://github.com/11shafayet/Language_Translation_Tool'
   },
 ];
