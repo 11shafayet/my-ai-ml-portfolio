@@ -110,4 +110,13 @@ export const projects = [
     color: 'green',
     githubLink: 'https://github.com/11shafayet/house_price_prediction'
   },
+  {
+    title: 'Language Translation Tool',
+    summary:
+      'Built a language translation application that translates text between languages through a simple, practical user workflow.',
+    stack: ['Python', 'Translation', 'NLP'],
+    metric: 'Multilingual text translation',
+    color: 'cyan',
+    githubLink: 'https://github.com/11shafayet/Language_Translation_Tool'
+  },
 ];
