@@ -84,6 +84,15 @@ export const projects = [
     githubLink: 'https://github.com/11shafayet/visual-defect-detector'
   },
   {
+    title: 'Store Sales Forecasting',
+    summary:
+      'Built a sales forecasting project that predicts store sales patterns from historical business data.',
+    stack: ['Python', 'Forecasting', 'Time Series', 'Machine Learning'],
+    metric: 'Store sales prediction',
+    color: 'green',
+    githubLink: 'https://github.com/11shafayet/store-sales-forecasting'
+  },
+  {
     title: 'Product Image Classifier',
     summary:
       'Built an image classification application that identifies product categories from uploaded product images.',
@@ -93,15 +102,6 @@ export const projects = [
     githubLink: 'https://github.com/11shafayet/product-image-classifier'
   },
   {
-    title: 'Language Translation Tool',
-    summary:
-      'Built a language translation application that translates text between languages through a simple, practical user workflow.',
-    stack: ['Python', 'Translation', 'NLP'],
-    metric: 'Multilingual text translation',
-    color: 'cyan',
-    githubLink: 'https://github.com/11shafayet/Language_Translation_Tool'
-  },
-  {
     title: 'Twitter Airline Sentiment Analysis',
     summary:
       'Built a multi-class sentiment classifier on real-world airline tweets using multiple NLP baselines and recurrent models.',
@@ -109,6 +109,15 @@ export const projects = [
     metric: 'Baseline > recurrent models',
     color: 'red',
     githubLink: 'https://github.com/11shafayet/twitter-airline-sentiment-analysis'
+  },
+  {
+    title: 'Language Translation Tool',
+    summary:
+      'Built a language translation application that translates text between languages through a simple, practical user workflow.',
+    stack: ['Python', 'Translation', 'NLP'],
+    metric: 'Multilingual text translation',
+    color: 'cyan',
+    githubLink: 'https://github.com/11shafayet/Language_Translation_Tool'
   },
   {
     title: 'E-commerce Customer Churn Predictor',

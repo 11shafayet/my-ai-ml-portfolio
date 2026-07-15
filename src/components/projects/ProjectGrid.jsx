@@ -25,7 +25,12 @@ function ProjectGrid({ items }) {
       viewport={{ once: false, margin: '-80px' }}
     >
       {items.map((project, index) => (
-        <GlassCard key={project.title} color={projectColors[index % projectColors.length]} delay={index * 0.08}>
+        <GlassCard
+          key={project.title}
+          color={projectColors[index % projectColors.length]}
+          delay={index * 0.08}
+          hoverEffect={{ y: -10, scale: 1.02 }}
+        >
           <div className={styles.projectTopline}>
             <span>{project.metric}</span>
           </div>
