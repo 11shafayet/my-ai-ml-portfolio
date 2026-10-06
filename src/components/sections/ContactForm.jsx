@@ -37,9 +37,14 @@ function ContactForm() {
       setStatus({ type: 'success', message: 'Your message has been sent. Thanks for reaching out!' });
     } catch (error) {
       console.error('EmailJS rejected the contact form submission.', error);
+      const reason = typeof error?.text === 'string'
+        ? error.text
+        : error instanceof Error
+          ? error.message
+          : 'EmailJS returned an unknown error.';
       setStatus({
         type: 'error',
-        message: `Unable to send your message right now. Please email ${personal.email} directly.`,
+        message: `EmailJS error: ${reason}. Please email ${personal.email} directly.`,
       });
     } finally {
       setIsSending(false);
