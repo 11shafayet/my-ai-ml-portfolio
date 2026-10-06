@@ -56,6 +56,14 @@ Install Node.js 20 or newer.
 npm install
 ```
 
+### Contact Form
+
+The contact form sends messages through EmailJS using the service, template, and public
+key configured in `src/components/sections/ContactForm.jsx`. The EmailJS template should
+use the form fields `name`, `email`, and `message`, and be configured to deliver to
+`11shafayet@gmail.com`. The form displays an error and the direct email address if
+EmailJS cannot send a message.
+
 ### Run Locally
 
 ```bash

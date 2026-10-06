@@ -1663,6 +1663,14 @@
   font-size: 0.92rem;
 }
 
+.formStatusError {
+  color: #ff8f8f;
+}
+
+.formStatusSuccess {
+  color: var(--base);
+}
+
 .pageLoader {
   position: fixed;
   inset: 0;
